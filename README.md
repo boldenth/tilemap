@@ -1,4 +1,4 @@
-# tilemap
+# `tilemap`
 
 A simple command-line tool to create tilemaps from images.
 
