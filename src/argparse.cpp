@@ -4,7 +4,7 @@
 
 
 
-bool parse_args(int argc, char *argv[], Options &config) {
+bool parse_args(int argc, char *argv[], options &config) {
     bool error = false;
 
     for (int i = 1; i < argc; i++) {
@@ -40,9 +40,10 @@ bool parse_args(int argc, char *argv[], Options &config) {
         } else if (option.find("--max-tiles=") != string::npos) {
             string val(option.erase(0, 12));
             config.max_tiles = stoi(val, nullptr, 0);
-        } else {
+        } else {// filename
             // TODO: add better error tracking
-            error = true;
+            //error = true;
+            config.image_filepath = option;
         }
     }
 

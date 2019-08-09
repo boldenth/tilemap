@@ -6,7 +6,7 @@ CPP := g++
 
 CPPFLAGS := -std=c++11 -Wall -Wno-unused-variable -Wno-uninitialized
 INCLUDES := -I include/ -I .
-OPTIONS  := -O2
+OPTIONS  := -lpng -O2
 
 BUILD_DIR  := build/
 SOURCE_DIR := src/

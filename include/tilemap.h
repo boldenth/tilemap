@@ -1,7 +1,5 @@
 // tilemap.h
 
-#pragma once
-
 #ifndef GUARD_TILEMAP_H_
 #define GUARD_TILEMAP_H_
 
@@ -42,9 +40,15 @@ do                                          \
 
 #endif // _MSC_VER
 
+// tilemap.cpp
+class png {
+    png()=default;
+    int num_colors;
+    vector<color> color_table;
+};
+
 // argparse.cpp
-struct Options {
-    //
+struct options {
     bool index = false;
     string palette_file;
     int tile_pixel_width = 8;
@@ -53,12 +57,14 @@ struct Options {
     int num_colors = 0;
     unsigned max_tiles = -1;
     int calls = 0;
+    string image_filepath;
 };
 
-bool parse_args(int argc, char *argv[], Options &config);
+bool parse_args(int argc, char *argv[], options &config);
 
 #define TILEMAP_VERSION "0.1.0"
 
+// main.cpp
 void print_help();
 void print_version();
 
